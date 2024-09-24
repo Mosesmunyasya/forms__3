@@ -1,0 +1,79 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-title>User Form</mat-card-title>
+      <mat-card-content>
+  
+        <!-- ID Field -->
+        <mat-form-field appearance="fill">
+          <mat-label>ID</mat-label>
+          <input matInput formControlName="id" type="text" />
+          <mat-error *ngIf="id.invalid && id.touched">ID is required.</mat-error>
+        </mat-form-field>
+  
+        <!-- First Name Field -->
+        <mat-form-field appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstname" type="text" />
+          <mat-error *ngIf="firstname.invalid && firstname.touched">
+            First name is required and should be at least 2 characters.
+          </mat-error>
+        </mat-form-field>
+  
+        <!-- Last Name Field -->
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastname" type="text" />
+          <mat-error *ngIf="lastname.invalid && lastname.touched">
+            Last name is required and should be at least 2 characters.
+          </mat-error>
+        </mat-form-field>
+  
+        <!-- Email Field -->
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" />
+          <mat-error *ngIf="email.invalid && email.touched">
+            A valid email is required.
+          </mat-error>
+        </mat-form-field>
+  
+        <!-- Phone Number Field -->
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+          <input matInput formControlName="phoneNumber" type="text" />
+          <mat-error *ngIf="phoneNumber.invalid && phoneNumber.touched">
+            Phone number is required and should be 10 digits.
+          </mat-error>
+        </mat-form-field>
+  
+        <!-- Age Field -->
+        <mat-form-field appearance="fill">
+          <mat-label>Age</mat-label>
+          <input matInput formControlName="age" type="number" />
+          <mat-error *ngIf="age.invalid && age.touched">
+            Age is required and should be between 18 and 100.
+          </mat-error>
+        </mat-form-field>
+  
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  
+  <div>
+    <!-- <button mat-raised-button color="primary" (click)="resetForm()">Reset Form</button> -->
+  </div>
+  <div *ngIf="courses.length > 0">This is the list
+    <ul>
+      <li *ngFor="let course of courses, index as i">{{i+1}}-{{course}}</li>
+    </ul>
+
+  </div>
+
+  <button (click)="navigateToCards()">Proceed to Cards</button>
+  <button (click)="navigateToTable()">Proceed to Table</button>
+  <button (click)="reloadPage()">Reload Page</button>
+
+  

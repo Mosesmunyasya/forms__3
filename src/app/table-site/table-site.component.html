@@ -1,0 +1,49 @@
+<p>table-site works!</p>
+<button (click)="goBack()">Go Back</button>
+
+<div class="container">
+    <!-- Form Section -->
+    <div class="form-container">
+      <h3>Fill in the Details</h3>
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="name">Name:</label>
+          <input id="name" formControlName="name">
+        </div>
+  
+        <div>
+          <label for="idnumber">ID Number:</label>
+          <input id="idnumber" formControlName="idnumber">
+        </div>
+  
+        <div>
+          <label for="tel">Tel:</label>
+          <input id="tel" formControlName="tel">
+        </div>
+  
+        <button type="submit">Add User</button>
+      </form>
+    </div>
+  
+    <!-- Table Section -->
+    <div class="table-container">
+      <h3>User Data</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>ID Number</th>
+            <th>Tel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.name }}</td>
+            <td>{{ user.idnumber }}</td>
+            <td>{{ user.tel }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
