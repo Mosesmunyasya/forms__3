@@ -36,7 +36,7 @@ export class LoginPageComponent implements OnInit {
       console.log('Login successful!');
       alert('Login successful');
       // Navigate to home component upon successful login
-      this.router.navigate(['home']);
+      this.router.navigate(['cards-site']);
     } else {
       console.log('Login failed!');
       this.loginError = true;  // Show an error message

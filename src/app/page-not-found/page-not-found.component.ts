@@ -14,4 +14,7 @@ export class PageNotFoundComponent implements OnInit {
  errorToDisplay(){
   console.log('Uknown Destination');
  }
+//  window.addEventListener("resize",() =>{
+//   console.log('window resized');
+//  })
 }
